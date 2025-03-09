@@ -8,7 +8,11 @@ const proxy = createProxyServer({
 });
 
 const server = http.createServer((req, res) => {
-    proxy.web(req, res);
+    proxy.web(req, res); // برای HTTP ترافیک عادی
+});
+
+server.on('upgrade', (req, socket, head) => {
+    proxy.ws(req, socket, head); // برای HTTPUpgrade (مثل WebSocket)
 });
 
 const PORT = process.env.PORT || 3000;
