@@ -2,7 +2,7 @@ const http = require('http');
 const { createProxyServer } = require('http-proxy');
 
 const proxy = createProxyServer({
-    target: 'ws://77.37.65.136:8443',
+    target: 'ws://77.37.65.136:10000',
     ws: true
 });
 
