@@ -2,8 +2,8 @@ const http = require('http');
 const { createProxyServer } = require('http-proxy');
 
 const proxy = createProxyServer({
-    target: 'ws://77.37.65.136:8443', // IP و پورت سرورت
-    ws: true // فعال کردن پشتیبانی WebSocket
+    target: 'ws://77.37.65.136:8443', // بدون TLS
+    ws: true
 });
 
 const server = http.createServer((req, res) => {
