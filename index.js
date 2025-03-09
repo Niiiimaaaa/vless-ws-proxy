@@ -2,8 +2,9 @@ const http = require('http');
 const { createProxyServer } = require('http-proxy');
 
 const proxy = createProxyServer({
-    target: 'ws://77.37.65.136:10000',
-    ws: true
+    target: 'wss://77.37.65.136:8443',
+    ws: true,
+    secure: true
 });
 
 const server = http.createServer((req, res) => {
