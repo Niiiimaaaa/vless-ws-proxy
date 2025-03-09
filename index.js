@@ -4,7 +4,7 @@ const { createProxyServer } = require('http-proxy');
 const proxy = createProxyServer({
     target: 'wss://77.37.65.136:10000',
     ws: true,
-    secure: true
+    secure: false // غیرفعال کردن تأیید گواهی
 });
 
 const server = http.createServer((req, res) => {
